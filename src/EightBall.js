@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./EightBall.css";
 
 const messages = [
   { msg: "It is certain.", color: "green" },
@@ -39,12 +40,15 @@ function EightBall({ answers = messages }) {
   }
 
   return (
-    <h1
-      style={{ backgroundColor: color, color: "white" }}
-      onClick={() => handleClick()}
-    >
-      {msg}
-    </h1>
+    <div className="EightBall">
+      <div
+        className="EightBall-window"
+        style={{ backgroundColor: color }}
+        onClick={() => handleClick()}
+      >
+        <h2 style={{ color: "white" }}>{msg}</h2>
+      </div>
+    </div>
   );
 }
 
